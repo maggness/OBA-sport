@@ -1,3 +1,19 @@
-body {
-    background-color: red;
+.ballsack  {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+.ballsack li {
+    --topBallPos: ;
+
+    width: 40vw;
+    height: 40vw;
+    border-radius: 150px;
+    background-color: white;
+    border: 0.4vw solid black;
+    box-shadow: 1vw 1vw black;
+    position: absolute;
 }

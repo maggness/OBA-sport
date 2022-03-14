@@ -40,3 +40,27 @@ function render(data) {
     main.insertAdjacentHTML("beforeend", html)
   })
 }
+
+// Get the root element
+var r = document.querySelector('.ballsack li');
+
+function getRandomArbitrary(min, max) {
+    return Math.random() * (max - min) + min;
+  }
+
+// Create a function for getting a variable value
+function myFunction_get() {
+  // Get the styles (properties and values) for the root
+  var rs = getComputedStyle(r);
+  // Alert the value of the --blue variable
+}
+
+// Create a function for setting a variable value
+function myFunction_set() {
+    console.log(Math.random());
+  // Set the value of variable --blue to another value (in this case "lightblue")
+  r.style.setProperty('--topBallPos', Math.random());
+}
+
+myFunction_get()
+myFunction_set()
