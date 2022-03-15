@@ -1,19 +1,102 @@
-.ballsack  {
-    position: relative;
-    width: 100vw;
-    height: 100vh;
+body {
     margin: 0;
     padding: 0;
 }
 
-.ballsack li {
-    --topBallPos: ;
-
-    width: 40vw;
-    height: 40vw;
-    border-radius: 150px;
+header {
+    width: 86vw;
     background-color: white;
-    border: 0.4vw solid black;
-    box-shadow: 1vw 1vw black;
+    height: 5vh;
+    z-index: 15;
+    position: fixed;
+    top: 1vh;
+    left: 1vw;
+    padding: 2vh;
+    box-shadow: 1vh 1vh black;
+    border: 0.5vh solid black;
+}
+
+main {
+    margin-top: 11.5vh;
+    overflow: scroll;
+}
+
+footer {
+    width: 15vw;
+    background-color: white;
+    position: fixed;
+    left: 0.5vh;
+    bottom: 0.5vh;
+    padding: 1% 2%;
+    border-radius: 5px;
+}
+
+footer img {
+    width: 100%;
+}
+
+header input {
     position: absolute;
+    top: 0;
+    left: 0;
+    width: 96%;
+    height: 94%;
+    margin: 0;
+    padding: 0 2%;
+    border: none;
+    outline: none;
+    color: black;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 2rem;
+
+}
+
+header input::placeholder {
+    color: black;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 2rem;
+}
+
+.ballsack  {
+    position: relative;
+    width: 100vw;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    height: 86.5vh;
+    overflow: hidden;
+}
+
+.ballsack li {
+    --ballIndex: 20;
+    --topBallPos: 1;
+    --leftBallPos: 1;
+
+    top: var(--topBallPos);
+    left: var(--leftBallPos);
+    position: absolute;
+    width: 40%;
+    padding: 3%;
+    z-index: var(--ballIndex);
+}
+
+.ballsack li h2 {
+    font-size: 1em;
+    color: black;
+}
+
+.ballsack li img {
+    width: 100%;
+    box-shadow: 1vh 1vh black;
+    border: .5vh solid black;
+    border-radius: 20%;
+}
+
+.swag2 {
+    width: 10vh;
+    height: 10vh;
+    background-color: red;
+    position: absolute;
+    top: 0;
+    z-index: 100000000;
 }
