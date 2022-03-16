@@ -1,6 +1,6 @@
 import { renderData, renderError } from "./renderData.js";
 
-export const getAndRenderData = (id) => {
+export const getData = (id) => {
   const searchBar = document.querySelector("#searchBar");
   let searchTerm = searchBar.value ? searchBar.value : "sport";
   const apilink = {
@@ -11,7 +11,8 @@ export const getAndRenderData = (id) => {
   };
   const { cors, endpoint, key, detail } = apilink;
   const url = `${cors}${endpoint}${searchTerm}&authorization=${key}&detaillevel=${detail}&output=json`;
-  const data = fetch(url)
+  
+  const getData = fetch(url)
     .then((response) => {
       return response.json();
     })
@@ -20,6 +21,6 @@ export const getAndRenderData = (id) => {
     })
     .catch((err) => {
       console.log(err);
-      // renderError(err)
+      renderError(err)
     });
 };
