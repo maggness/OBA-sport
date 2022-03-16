@@ -1,4 +1,14 @@
-import { search } from './modules/search.js'
-import './modules/moveItems.js'
+import { getAndRenderData } from "./modules/getAndRenderData.js";
+import { randomizeBalls } from "./modules/randomizeBalls.js";
+import "./modules/moveItems.js";
+import "./routes/routie.js";
 
-search()
+routie({
+  "": () => {
+    randomizeBalls()
+    getAndRenderData();
+  },
+  "item/:id": (id) => {
+    getAndRenderData(id);
+  },
+});

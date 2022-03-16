@@ -1,28 +1,17 @@
 export const randomizeBalls = (min, max) => {
-    const ball = document.querySelectorAll('.MainContainer a');
-    console.log(ball);
+  const ball = document.querySelectorAll(".MainContainer a");
+  ball.forEach((element) => {
+    getRndInteger(min, max);
+    element.style.setProperty("--topBallPos", getRndInteger(0, 50) + "vh");
 
-    ball.forEach(element =>  {
-        getRndInteger(min, max)
-        element.style.setProperty('--topBallPos', getRndInteger(0,50) + "vh");
+    getRndInteger(min, max);
+    element.style.setProperty("--leftBallPos", getRndInteger(0, 50) + "vw");
 
-        getRndInteger(min, max)
-        element.style.setProperty('--leftBallPos', getRndInteger(0,50) + "vw");
-
-        getRndInteger(min, max)
-        element.style.setProperty('--leftBallShadow', getRndInteger(-5, 5) + "px");
-
-        getRndInteger(min, max)
-        element.style.setProperty('--topBallShadow', getRndInteger(-5, 5) + "px");
-
-        getRndInteger(min, max)
-        element.style.setProperty('--ballIndex', getRndInteger(1, ball.length + 1));
-
-        getRndInteger(min, max)
-        element.style.setProperty('--ballWidth', getRndInteger(20, 40) + "vw");
-    });
+    getRndInteger(min, max);
+    element.style.setProperty("--ballIndex", getRndInteger(2, ball.length + 1));
+  });
 };
 
 const getRndInteger = (min, max) => {
-    return Math.floor(Math.random() * (max - min) ) + min;
-  }
+  return Math.floor(Math.random() * (max - min)) + min;
+};
