@@ -1,5 +1,5 @@
 export const randomizeBalls = (min, max) => {
-    let ball = document.querySelectorAll('.ballsack li');
+    const ball = document.querySelectorAll('.MainContainer a');
     console.log(ball);
 
     ball.forEach(element =>  {

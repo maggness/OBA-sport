@@ -7,10 +7,11 @@ fetch(url)
     return response.json()
   })
   .then((data) => {
+    console.log(data);
     renderData(data)
   })
   .catch((err) => {
     console.log(err)
-    // renderError(err)
+    renderError(err)
   })
 }

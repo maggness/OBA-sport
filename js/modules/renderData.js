@@ -1,26 +1,27 @@
 import { randomizeBalls } from "./randomizeBalls.js"
 
 export function renderData(data) {
-    const ballsContainer = document.querySelector("#ballsContainer")
+    const ballsContainer = document.querySelector("#MainContainerId")
 
     ballsContainer.innerHTML = ""
     const results = data.results
     results.forEach((item) => {
-        console.log(item.titles);
+        console.log(item.id);
       const html = `
-                <li class="swag">
+                <li>
+                  <a href="#${item.id}">
                   <img src="${item.coverimages[1]}"></img>
+                  </a>
                 </li>
               `
+              // <h2>${item.titles[0]}</h2>
         ballsContainer.insertAdjacentHTML("afterbegin", html)
     })
     randomizeBalls()
   }
 
-// <h2>${item.titles}</h2>
-
   export function renderError(err) {
-    const ballsContainer = document.querySelector("#ballsContainer")
+    const ballsContainer = document.querySelector("#MainContainerId")
 
       const html = `
                 <li>

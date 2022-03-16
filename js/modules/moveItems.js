@@ -1,18 +1,10 @@
 // source: https://www.kirupa.com/html5/drag.htm
 
-var container = document.querySelector("#ballsContainer");
-var activeItem = null;
-var active = false;
+const container = document.querySelector("#MainContainerId");
+let activeItem = null;
+let active = false;
 
-    container.addEventListener("touchstart", dragStart, false);
-    container.addEventListener("touchend", dragEnd, false);
-    container.addEventListener("touchmove", drag, false);
-
-    container.addEventListener("mousedown", dragStart, false);
-    container.addEventListener("mouseup", dragEnd, false);
-    container.addEventListener("mousemove", drag, false);
-
-    function dragStart(e) {
+    const dragStart = (e) => {
 
       if (e.target !== e.currentTarget) {
         active = true;
@@ -41,7 +33,7 @@ var active = false;
       }
     }
 
-    function dragEnd(e) {
+    const dragEnd = (e) => {
       if (activeItem !== null) {
         activeItem.initialX = activeItem.currentX;
         activeItem.initialY = activeItem.currentY;
@@ -51,7 +43,7 @@ var active = false;
       activeItem = null;
     }
 
-    function drag(e) {
+    const drag = (e) => {
       if (active) {
         if (e.type === "touchmove") {
           e.preventDefault();
@@ -70,6 +62,14 @@ var active = false;
       }
     }
 
-    function setTranslate(xPos, yPos, el) {
+    const setTranslate = (xPos, yPos, el) => {
       el.style.transform = "translate3d(" + xPos + "px, " + yPos + "px, 0)";
     }
+
+    container.addEventListener("touchstart", dragStart, false);
+    container.addEventListener("touchend", dragEnd, false);
+    container.addEventListener("touchmove", drag, false);
+
+    container.addEventListener("mousedown", dragStart, false);
+    container.addEventListener("mouseup", dragEnd, false);
+    container.addEventListener("mousemove", drag, false);
