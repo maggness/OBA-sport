@@ -12,6 +12,6 @@ fetch(url)
   })
   .catch((err) => {
     console.log(err)
-    renderError(err)
+    // renderError(err)
   })
 }

@@ -13,6 +13,9 @@ export const search = () => {
     getAndRenderData(url);
 }
 
-searchBar.addEventListener("keyup", function (e) {
-    search();
-  });
+searchBar.addEventListener("keydown", (e) => {
+    // ONLY SEARCHING IF ENTER IS PRESSED
+    if (e.code === "Enter") {
+        search()
+    }
+})
