@@ -39,7 +39,7 @@
 }
 
 .count1 {
-    --loadingBookTop: 5vh;
+    --loadingBookTop: 17vh;
     --loadingBookleft: 10vw;
     --animationTime: 1.7s;
     --loadingBookHeight: 29%;
@@ -53,7 +53,7 @@
 }
 
 .count3 {
-    --loadingBookTop: 9vh;
+    --loadingBookTop: 18vh;
     --loadingBookleft: 40vw;
     --animationTime: 1.5s;
     --loadingBookHeight: 25%;
@@ -88,21 +88,21 @@
 }
 
 .count8 {
-    --loadingBookTop: 44vh;
+    --loadingBookTop: 54vh;
     --loadingBookleft: 44vw;
     --animationTime: 2s;
     --loadingBookHeight: 31%;
 }
 
 .count9 {
-    --loadingBookTop: 42vh;
+    --loadingBookTop: 52vh;
     --loadingBookleft: 31vw;
     --animationTime: 1.4s;
     --loadingBookHeight: 25%;
 }
 
 .count10 {
-    --loadingBookTop: 12vh;
+    --loadingBookTop: 45vh;
     --loadingBookleft: 48vw;
     --animationTime: 1.8s;
     --loadingBookHeight: 31%;

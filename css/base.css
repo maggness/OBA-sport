@@ -7,7 +7,7 @@ header {
     width: 86vw;
     background-color: white;
     height: 5vh;
-    z-index: 15;
+    z-index: 100;
     position: fixed;
     top: 1vh;
     left: 1vw;
@@ -39,9 +39,9 @@ header input::placeholder {
 }
 
 main {
-    margin-top: 11.5vh;
+    margin: 0;
     overflow: hidden;
-    height: 88.5vh;
+    height: 100vh;
 }
 
 .MainContainer  {
@@ -50,15 +50,17 @@ main {
     margin: 0;
     padding: 0;
     list-style: none;
-    height: 88.5vh;
+    height: 100vh;
     overflow: hidden;
     top: 0;
+    z-index: 2;
 }
 
 .MainContainer a {
     --ballIndex: 20;
     --topBallPos: 1;
     --leftBallPos: 1;
+    --scaleList: 1;
 
     top: var(--topBallPos);
     left: var(--leftBallPos);
@@ -80,6 +82,61 @@ main {
     border-radius: 20%;
     pointer-events: none;
     background-color: white;
+}
+
+main > img:first-of-type {
+    position: fixed;
+    top: 50vh;
+    transform: translate(44vw, 0vh);
+    transform-origin: bottom;
+    z-index: 100;
+    width: 20vw;
+    animation: moveItemZeroState 10s infinite ease-in-out;
+    animation-delay: 1s;
+    pointer-events: none;
+    transition: .5s;
+}
+
+@keyframes moveItemZeroState {
+    0% {
+        transform: translate(44vw, 0vh) rotateX(0deg);
+    }
+
+    5% {
+        transform: translate(44vw, 0vh) rotateX(35deg);
+    }
+
+    20%{
+        transform: translate(-3vw, -4vh) rotateX(35deg);
+    }
+
+    25%{
+        transform: translate(-3vw, -4vh) rotateX(0deg);
+    }
+
+    40%{
+        transform: translate(44vw, 0vh) rotateX(0deg);
+    }
+
+    45%{
+        transform: translate(44vw, 0vh) rotateX(35deg);
+    }
+
+    55%{
+        transform: translate(93vw, -2vh) rotateX(35deg);
+    }
+
+    60%{
+        transform: translate(93vw, -2vh) rotateX(0deg);
+    }
+
+    70%{
+        transform: translate(44vw, 0vh) rotateX(0deg);
+    }
+}
+
+.invisible {
+    opacity: 0;
 }
 
 main div {
@@ -115,11 +172,59 @@ footer {
     bottom: 0.5vh;
     padding: 1% 2%;
     border-radius: 5px;
-    z-index: 50;
+    z-index: 100;
 }
 
-footer img {
+footer a img {
     width: 100%;
+}
+
+footer div img:last-of-type {
+    width: 70%;
+    pointer-events: none;
+    position: relative;
+}
+
+footer div ul {
+    background: white;
+    border: 4px solid;
+    width: 35vw;
+    position: fixed;
+    bottom: -1.5vh;
+    right: 1.5vw;
+    list-style: none;
+    padding: 3% 3% 20% 3%;
+    transform-origin: right bottom;
+    transform: scale(0);
+    font-family: fantasy;
+}
+
+footer div ul li {
+    border-bottom: 1px solid black;
+}
+
+.listOpen {
+    transform: scale(1);
+    transition: .6s;
+}
+
+.groter {
+    --scaleList: 1.1 !important;
+}
+
+.kleinerInLijst {
+    --scaleList: 0 !important;
+    pointer-events: none;
+    transition: 1s;
+    transform-origin: right bottom;
+}
+
+footer > div:last-of-type {
+    width: 14vw;
+    height: 14vw;
+    position: fixed;
+    bottom: 1vh;
+    right: 1vh;
 }
 
 .fireBorderLeft {
@@ -159,3 +264,13 @@ footer img {
         box-shadow: inset 0px 0px 35px -30px red;
     }
 }
+
+/* .slideAnimation {
+    animation: itemSlide 1s;
+}
+
+@keyframes itemSlide {
+    100% {
+        transform: translate3d(calc(var(--translateinitialX) + 10%), calc(var(--translateinitialY) + 10%), 0);
+    }
+} */

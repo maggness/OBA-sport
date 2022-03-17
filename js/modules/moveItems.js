@@ -1,6 +1,8 @@
 // source: https://www.kirupa.com/html5/drag.htm
 
 const container = document.querySelector("#MainContainerId");
+export let list = []
+const moveHelper = document.querySelector('main > img:first-of-type')
 let activeItem = null;
 let active = false;
 
@@ -21,6 +23,7 @@ const dragStart = (e) => {
       }
 
       if (e.type === "touchstart") {
+        moveHelper.classList.add('invisible')
         activeItem.initialX = e.touches[0].clientX - activeItem.xOffset;
         activeItem.initialY = e.touches[0].clientY - activeItem.yOffset;
       } else {
@@ -36,6 +39,10 @@ const dragEnd = (e) => {
   if (activeItem !== null) {
     activeItem.initialX = activeItem.currentX;
     activeItem.initialY = activeItem.currentY;
+    console.log(activeItem.initialX, activeItem.initialY);
+    if (activeItem.className === 'groter') {
+      activeItem.classList.add('kleinerInLijst')
+    }
   }
 
   active = false;
@@ -45,8 +52,25 @@ const dragEnd = (e) => {
 const drag = (e) => {
   if (active) {
     if (e.type === "touchmove") {
+
       const rectItem = activeItem.getBoundingClientRect()
-      console.log(rectItem.top);
+
+      if (rectItem.top > 520 && rectItem.top < 660 && rectItem.left > 180 && rectItem.left < 280) {
+        activeItem.classList.add('groter')
+
+        if (!list.includes(activeItem.id)) {
+          list.push(activeItem.id)
+        }
+      }
+
+      if (rectItem.top < 520 && rectItem.left < 180) {
+        activeItem.classList.remove('groter')
+
+        //Sleep uit lijst werkt nog niet goed
+        // var item = activeItem.id
+        // var index = list.indexOf(item);
+        // list.splice(index);
+      }
 
       if (rectItem.left < -175) {
         console.log('uit scherm links');
@@ -98,7 +122,7 @@ const drag = (e) => {
 };
 
 const setTranslate = (xPos, yPos, el) => {
-  el.style.transform = "translate3d(" + xPos + "px, " + yPos + "px, 0)";
+  el.style.transform = "translate3d(" + xPos + "px, " + yPos + "px, 0) scale(var(--scaleList))";
 };
 
 container.addEventListener("touchstart", dragStart, false);

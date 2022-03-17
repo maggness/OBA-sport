@@ -30,7 +30,7 @@ const renderDatanoId = (data) => {
     }
     const html = `
                 <li>
-                  <a href="#item/${item.id}">
+                  <a href="#item/${item.id}" id="${item.id}">
                   <img src="${item.coverimages[1]}"></img>
                   </a>
                 </li>

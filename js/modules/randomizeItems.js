@@ -2,7 +2,7 @@ export const randomizeItems = (min, max) => {
   const ball = document.querySelectorAll(".MainContainer a");
   ball.forEach((element) => {
     getRndInteger(min, max);
-    element.style.setProperty("--topBallPos", getRndInteger(0, 50) + "vh");
+    element.style.setProperty("--topBallPos", getRndInteger(11, 58) + "vh");
 
     getRndInteger(min, max);
     element.style.setProperty("--leftBallPos", getRndInteger(0, 50) + "vw");
