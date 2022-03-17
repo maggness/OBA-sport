@@ -30,12 +30,11 @@ const renderDatanoId = (data) => {
     }
     const html = `
                 <li>
-                  <a href="#item/${item.id}" id="${item.id}">
+                  <a href="#item/${item.id}" id="${item.titles[0]}">
                   <img src="${item.coverimages[1]}"></img>
                   </a>
                 </li>
               `;
-    // <h2>${item.titles[0]}</h2>
     mainContainer.insertAdjacentHTML("afterbegin", html);
   });
   randomizeItems();

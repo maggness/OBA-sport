@@ -13,13 +13,14 @@ const geenLijstTekst = "<li>Je lijst is nog leeg! Sleep boeken naar de boekenkas
     list.forEach((item) => {
     const listData = `
                 <li>
-                  ${item}
+                  <p>${item}</p>
                 </li>
               `;
     bookList.insertAdjacentHTML("afterbegin", listData);
     }
     )
     bookList.classList.toggle('listOpen')
+    bookList.classList.add('closeSmooth')
   }
 
 yourList.addEventListener("click", generateBookList);
