@@ -45,6 +45,42 @@ const dragEnd = (e) => {
 const drag = (e) => {
   if (active) {
     if (e.type === "touchmove") {
+      const rectItem = activeItem.getBoundingClientRect()
+      console.log(rectItem.top);
+
+      if (rectItem.left < -175) {
+        console.log('uit scherm links');
+        container.classList.add('fireBorderLeft')
+
+        container.onanimationend = () => {
+          container.classList.remove('fireBorderLeft')
+        };
+      }
+      if (rectItem.left > 350) {
+        console.log('uit scherm rechts');
+        container.classList.add('fireBorderRight')
+
+        container.onanimationend = () => {
+          container.classList.remove('fireBorderRight')
+        };
+      }
+      if (rectItem.top < -145) {
+        console.log('uit scherm top');
+        container.classList.add('fireBorderTop')
+
+        container.onanimationend = () => {
+          container.classList.remove('fireBorderTop')
+        };
+      }
+      if (rectItem.top > 750) {
+        console.log('uit scherm bottom');
+        container.classList.add('fireBorderBottom')
+
+        container.onanimationend = () => {
+          container.classList.remove('fireBorderBottom')
+        };
+      }
+
       e.preventDefault();
 
       activeItem.currentX = e.touches[0].clientX - activeItem.initialX;

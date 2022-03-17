@@ -52,6 +52,7 @@ main {
     list-style: none;
     height: 88.5vh;
     overflow: hidden;
+    top: 0;
 }
 
 .MainContainer a {
@@ -119,4 +120,42 @@ footer {
 
 footer img {
     width: 100%;
+}
+
+.fireBorderLeft {
+    --boxShadowLeft: 33px;
+    --boxShadowBottom: 0px;
+    animation: fireBlast .8s forwards;
+}
+
+.fireBorderRight {
+    --boxShadowLeft: -33px;
+    --boxShadowBottom: 0px;
+    animation: fireBlast .8s forwards;
+}
+
+.fireBorderTop {
+    --boxShadowLeft: 0px;
+    --boxShadowBottom: 31px;
+    animation: fireBlast .8s forwards;
+}
+
+.fireBorderBottom {
+    --boxShadowLeft: 0px;
+    --boxShadowBottom: -31px;
+    animation: fireBlast .8s forwards;
+}
+
+@keyframes fireBlast {
+    0% {
+        box-shadow: inset 0px 0px 35px -30px red;
+    }
+
+    50% {
+        box-shadow: inset var(--boxShadowLeft) var(--boxShadowBottom) 35px -30px red;
+    }
+
+    100% {
+        box-shadow: inset 0px 0px 35px -30px red;
+    }
 }

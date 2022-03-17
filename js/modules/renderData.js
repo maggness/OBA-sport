@@ -1,8 +1,8 @@
-import { randomizeBalls } from "./randomizeBalls.js";
+import { randomizeItems } from "./randomizeItems.js";
 import { clearData } from "./clearData.js";
 import "./search.js";
 
-const ballsContainer = document.querySelector("#MainContainerId");
+const mainContainer = document.querySelector("#MainContainerId");
 const body = document.body
 
 export const renderData = (data, id, year) => {
@@ -26,7 +26,6 @@ const renderDatanoId = (data) => {
   results.forEach((item) => {
     console.log(item.id);
     if (item.coverimages[1] === undefined) {
-      console.log("kut ding");
       item.coverimages[1] = "./images/noimage.png";
     }
     const html = `
@@ -37,9 +36,9 @@ const renderDatanoId = (data) => {
                 </li>
               `;
     // <h2>${item.titles[0]}</h2>
-    ballsContainer.insertAdjacentHTML("afterbegin", html);
+    mainContainer.insertAdjacentHTML("afterbegin", html);
   });
-  randomizeBalls();
+  randomizeItems();
 };
 
 // Render with ID
@@ -49,7 +48,7 @@ const renderDataWithId = (data, id) => {
   const image = filter.map((item) => item.coverimages[1]);
   const title = filter.map((item) => item.titles[1]);
 
-  ballsContainer.insertAdjacentHTML(
+  mainContainer.insertAdjacentHTML(
     "afterbegin",
     `<li class="itemDetails">
       <h1>${title}</h1>
@@ -65,7 +64,7 @@ const renderDataWithId = (data, id) => {
 //   const image = filter.map((item) => item.coverimages[1]);
 //   const title = filter.map((item) => item.titles[1]);
 
-//   ballsContainer.insertAdjacentHTML(
+//   mainContainer.insertAdjacentHTML(
 //     "afterbegin",
 //     `<h1>${title}</h1>
 //     <img src="${image}"></img>
@@ -76,9 +75,9 @@ const renderDataWithId = (data, id) => {
 export function renderError(err) {
   const html = `
                 <li>
-                  <h2>Hij werkt niet wat een feest</h2>
+                  <h2>Error, try to turn on CORS: <a href="https://cors-anywhere.herokuapp.com/">https://cors-anywhere.herokuapp.com/</a></h2>
                 </li>
               `;
-  randomizeBalls();
-  ballsContainer.insertAdjacentHTML("afterbegin", html);
+  randomizeItems();
+  mainContainer.insertAdjacentHTML("afterbegin", html);
 }

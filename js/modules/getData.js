@@ -12,7 +12,8 @@ export const getData = (id) => {
   const { cors, endpoint, key, detail } = apilink;
   const url = `${cors}${endpoint}${searchTerm}&authorization=${key}&detaillevel=${detail}&output=json`;
   
-  const getData = fetch(url)
+  const getData = 
+  fetch(url)
     .then((response) => {
       return response.json();
     })

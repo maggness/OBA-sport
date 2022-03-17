@@ -1,4 +1,4 @@
-export const randomizeBalls = (min, max) => {
+export const randomizeItems = (min, max) => {
   const ball = document.querySelectorAll(".MainContainer a");
   ball.forEach((element) => {
     getRndInteger(min, max);

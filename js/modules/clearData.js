@@ -1,4 +1,4 @@
 export const clearData = () => {
-    const ballsContainer = document.querySelector("#MainContainerId");
-    ballsContainer.innerHTML = "";
+    const mainContainer = document.querySelector("#MainContainerId");
+    mainContainer.innerHTML = "";
 }
