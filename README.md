@@ -3,7 +3,7 @@ Project 1 / 2021 - 2022
 
 For the minor web design & development we got the assignment to work together with the OBA. We used the OBA API to get data for books & information.
 
-You can see the live application here:
+You can see the live application here: https://maggness.github.io/OBA-sport/
 
 ![Front image](https://user-images.githubusercontent.com/30145681/158965126-6b20d0c5-3228-4b28-bf8e-4d01a666c99e.png)
 
