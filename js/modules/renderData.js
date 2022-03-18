@@ -58,6 +58,5 @@ export function renderError(err) {
                   <h2>Error, try to turn on CORS: <a href="https://cors-anywhere.herokuapp.com/">https://cors-anywhere.herokuapp.com/</a></h2>
                 </li>
               `;
-  randomizeItems();
   mainContainer.insertAdjacentHTML("afterbegin", html);
 }

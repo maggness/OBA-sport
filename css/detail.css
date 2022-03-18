@@ -26,3 +26,11 @@
 .itemDetails h1 {
   margin: 2% 0% 10% 0;
 }
+
+.renderItemDetails > main > img:first-of-type {
+  display: none;
+}
+
+.renderItemDetails #yourList {
+  display: none;
+}

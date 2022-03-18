@@ -30,6 +30,7 @@ export const getData = (id) => {
     });
 };
 
+// API 2 connection
 export const getData2 = () => {
   const searchBar = document.querySelector("#searchBar");
   let searchTerm = searchBar.value ? searchBar.value : "sport";

@@ -88,7 +88,7 @@ main > img:first-of-type {
   top: 50vh;
   transform: translate(44vw, 0vh);
   transform-origin: bottom;
-  z-index: 100;
+  z-index: 150;
   width: 20vw;
   animation: moveItemZeroState 10s infinite ease-in-out;
   animation-delay: 1s;
@@ -285,3 +285,15 @@ footer > div:last-of-type {
         transform: translate3d(calc(var(--translateinitialX) + 10%), calc(var(--translateinitialY) + 10%), 0);
     }
 } */
+
+@media (orientation: landscape) {
+  header {
+    display: none;
+  }
+  main {
+    display: none;
+  }
+  footer {
+    display: none;
+  }
+}
