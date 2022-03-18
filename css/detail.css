@@ -1,24 +1,28 @@
 .renderItemDetails header {
-    box-shadow: -1vh -1vh black;
-    top: 1.5vh;
-    left: 2.5vw;
+  box-shadow: -1vh -1vh black;
+  top: 1.5vh;
+  left: 2.5vw;
 }
 
 .renderItemDetails .MainContainer li img {
-    width: 100%;
-    box-shadow: -1vh -1vh black;
-    border: 4px solid black;
-    border-radius: 20%;
-    pointer-events: none;
-    background-color: white;
+  width: 100%;
+  box-shadow: -1vh -1vh black;
+  border: 4px solid black;
+  border-radius: 20%;
+  pointer-events: none;
+  background-color: white;
 }
 
 .itemDetails {
-    background-color: white;
-    z-index: 30;
-    width: 98vw;
-    height: 100vh;
-    pointer-events: none;
-    position: absolute;
-    margin: 0 2vw;
+  background-color: white;
+  z-index: 30;
+  width: 80vw;
+  height: 100vh;
+  pointer-events: none;
+  position: absolute;
+  margin: 12vh 10vw 0px 10vw;
+}
+
+.itemDetails h1 {
+  margin: 2% 0% 10% 0;
 }

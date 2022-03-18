@@ -1,8 +1,8 @@
 // source: https://www.kirupa.com/html5/drag.htm
 
 const container = document.querySelector("#MainContainerId");
-export let list = []
-const moveHelper = document.querySelector('main > img:first-of-type')
+export let list = [];
+const moveHelper = document.querySelector("main > img:first-of-type");
 let activeItem = null;
 let active = false;
 
@@ -23,7 +23,7 @@ const dragStart = (e) => {
       }
 
       if (e.type === "touchstart") {
-        moveHelper.classList.add('invisible')
+        moveHelper.classList.add("invisible");
         activeItem.initialX = e.touches[0].clientX - activeItem.xOffset;
         activeItem.initialY = e.touches[0].clientY - activeItem.yOffset;
       } else {
@@ -39,9 +39,8 @@ const dragEnd = (e) => {
   if (activeItem !== null) {
     activeItem.initialX = activeItem.currentX;
     activeItem.initialY = activeItem.currentY;
-    console.log(activeItem.initialX, activeItem.initialY);
-    if (activeItem.className === 'groter') {
-      activeItem.classList.add('kleinerInLijst')
+    if (activeItem.className === "groter") {
+      activeItem.classList.add("kleinerInLijst");
     }
   }
 
@@ -52,19 +51,23 @@ const dragEnd = (e) => {
 const drag = (e) => {
   if (active) {
     if (e.type === "touchmove") {
+      const rectItem = activeItem.getBoundingClientRect();
 
-      const rectItem = activeItem.getBoundingClientRect()
-
-      if (rectItem.top > 520 && rectItem.top < 660 && rectItem.left > 180 && rectItem.left < 280) {
-        activeItem.classList.add('groter')
+      if (
+        rectItem.top > 520 &&
+        rectItem.top < 660 &&
+        rectItem.left > 180 &&
+        rectItem.left < 280
+      ) {
+        activeItem.classList.add("groter");
 
         if (!list.includes(activeItem.id)) {
-          list.push(activeItem.id)
+          list.push(activeItem.id);
         }
       }
 
       if (rectItem.top < 520 && rectItem.left < 180) {
-        activeItem.classList.remove('groter')
+        activeItem.classList.remove("groter");
 
         //Sleep uit lijst werkt nog niet goed
         // var item = activeItem.id
@@ -73,35 +76,35 @@ const drag = (e) => {
       }
 
       if (rectItem.left < -175) {
-        console.log('uit scherm links');
-        container.classList.add('fireBorderLeft')
+        container.classList.remove("fireBorderLeft");
+        container.classList.add("fireBorderLeft");
 
         container.onanimationend = () => {
-          container.classList.remove('fireBorderLeft')
+          container.classList.remove("fireBorderLeft");
         };
       }
       if (rectItem.left > 350) {
-        console.log('uit scherm rechts');
-        container.classList.add('fireBorderRight')
+        container.classList.remove("fireBorderRight");
+        container.classList.add("fireBorderRight");
 
         container.onanimationend = () => {
-          container.classList.remove('fireBorderRight')
+          container.classList.remove("fireBorderRight");
         };
       }
       if (rectItem.top < -145) {
-        console.log('uit scherm top');
-        container.classList.add('fireBorderTop')
+        container.classList.remove("fireBorderTop");
+        container.classList.add("fireBorderTop");
 
         container.onanimationend = () => {
-          container.classList.remove('fireBorderTop')
+          container.classList.remove("fireBorderTop");
         };
       }
       if (rectItem.top > 750) {
-        console.log('uit scherm bottom');
-        container.classList.add('fireBorderBottom')
+        container.classList.remove("fireBorderBottom");
+        container.classList.add("fireBorderBottom");
 
         container.onanimationend = () => {
-          container.classList.remove('fireBorderBottom')
+          container.classList.remove("fireBorderBottom");
         };
       }
 
@@ -122,7 +125,8 @@ const drag = (e) => {
 };
 
 const setTranslate = (xPos, yPos, el) => {
-  el.style.transform = "translate3d(" + xPos + "px, " + yPos + "px, 0) scale(var(--scaleList))";
+  el.style.transform =
+    "translate3d(" + xPos + "px, " + yPos + "px, 0) scale(var(--scaleList))";
 };
 
 container.addEventListener("touchstart", dragStart, false);

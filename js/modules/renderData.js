@@ -3,28 +3,23 @@ import { clearData } from "./clearData.js";
 import "./search.js";
 
 const mainContainer = document.querySelector("#MainContainerId");
-const body = document.body
+const body = document.body;
 
-export const renderData = (data, id, year) => {
-  if (!id && !year) {
+export const renderData = (data, id) => {
+  if (!id) {
     body.classList.remove("renderItemDetails");
     renderDatanoId(data);
-  }
-  // else if (year) {
-  //   renderDataWithYear(data), year;
-  //   console.log('year');
-  // }
-  else {
+  } else {
     body.classList.add("renderItemDetails");
     renderDataWithId(data, id);
   }
 };
 
+// Render data when there is no id
 const renderDatanoId = (data) => {
   clearData();
   const results = data.results;
   results.forEach((item) => {
-    console.log(item.id);
     if (item.coverimages[1] === undefined) {
       item.coverimages[1] = "./images/noimage.png";
     }
@@ -56,21 +51,7 @@ const renderDataWithId = (data, id) => {
   );
 };
 
-// Render with year
-// const renderDataWithYear = (data, year) => {
-//   clearData()
-//   const filter = data.results.filter((item) => item.year === year);
-//   const image = filter.map((item) => item.coverimages[1]);
-//   const title = filter.map((item) => item.titles[1]);
-
-//   mainContainer.insertAdjacentHTML(
-//     "afterbegin",
-//     `<h1>${title}</h1>
-//     <img src="${image}"></img>
-//     `
-//   );
-// }
-
+// Render if err
 export function renderError(err) {
   const html = `
                 <li>
