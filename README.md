@@ -20,7 +20,7 @@ You can search items & add these items to a list by dragging it to the list. Rec
 
 ## Install the project
 
-To run this project locally you can clone this project with: `gh repo clone maggness/Het-Kunst-Appie`. Run the code on a local server, otherwise the modules will not work. (You can use the "go live" extension of Visual Studio Code)
+To run this project locally you can clone this project with: `gh repo clone maggness/OBA-sport`. Run the code on a local server, otherwise the modules will not work. (You can use the "go live" extension of Visual Studio Code)
 
 You will need a new API key & secret key.
 
