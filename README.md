@@ -15,6 +15,8 @@ There are children who want to explore the world of sports but don't know where 
 
 You can search items & add these items to a list by dragging it to the list. Recall books from this list and explore information you didn’t know you needed.
 
+If you are unable to see data, try this: https://cors-anywhere.herokuapp.com/corsdemo
+
 ## Activity Diagram
 
 ![Activity Diagram](https://user-images.githubusercontent.com/30145681/158976364-6cb94949-e4d0-4d43-b861-d4668d0b7e9f.png)
