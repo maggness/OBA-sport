@@ -17,6 +17,7 @@ You can search items & add these items to a list by dragging it to the list. Rec
 
 ## Activity Diagram
 
+![Activity Diagram](https://user-images.githubusercontent.com/30145681/158976364-6cb94949-e4d0-4d43-b861-d4668d0b7e9f.png)
 
 ## Install the project
 
