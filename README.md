@@ -36,6 +36,8 @@ We use the OBA API, here you can find everything the OBA has.
 - Improved dragging
 - Make site responsive
 - Improved UI
+- Not add items to list if dragged away from list
+- Drag items out of list
 - Drag speed accelerator (Items slide)
 
 ## Prototype 1
@@ -43,13 +45,11 @@ We use the OBA API, here you can find everything the OBA has.
 
 ## Licence
 
-Dit project is voorzien van een MIT licence. Zie de pagina LICENCE voor meer informatie.
+This project has a MIT licence. See the LICENCE page for more info.
 
 ## Resources
 
 OBA API
-
-Lessen & leraren
 
 W3 Schools
 
